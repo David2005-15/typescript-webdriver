@@ -45,7 +45,7 @@ export class BestsellerPage extends BestsellerPageSelector{
         if (option == "low-high"){
             await actions.selectWithText(await this.filterDropDown(), "Price: Low to High");
             for (let i: number = 2; i < 5; i++){
-                await browser.pause(5000);
+                await actions.waitForElement(await this.wishListText(), 5000);
                 for (let j: number = 0; j < await this.itemPrices().length; j++){
                     let price = await  this.itemPrices()[j].getText();
                     price = price.replace("Price", '');
@@ -69,7 +69,7 @@ export class BestsellerPage extends BestsellerPageSelector{
             await actions.selectWithText(await this.filterDropDown(), "Price: High to Low");
 
             for (let i: number = 2; i < 5; i++){
-                await browser.pause(5000);
+                await actions.waitForElement(await this.wishListText(), 5000);
                 for (let j: number = 0; j < await this.itemPrices().length; j++){
                     let price = await  this.itemPrices()[j].getText();
                     price = price.replace("Price", '');

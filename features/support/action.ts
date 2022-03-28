@@ -27,4 +27,8 @@ export class Action{
     async selectWithText(element: any, text: string) {
         await element.selectByVisibleText(text);
     }
+
+    async waitUntilDisplay(element: any, delay: number): Promise<void> {
+        await element.waitForDisplayed({timeout: delay});
+    }
 }

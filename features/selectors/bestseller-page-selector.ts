@@ -30,4 +30,8 @@ export class BestsellerPageSelector {
     filterDropDown(): any {
         return browser.$("#sortBy");
     }
+
+    wishListText(): any {
+        return browser.$("li:nth-child(1) > div >[class*='ProductLeafSharedstyles__W'] > div > div > div");
+    }
 }
